@@ -1,7 +1,8 @@
 :root {
   --ink: #182638;
+  --blue-grey: #243447;
   --line: #d9dde1;
-  --accent: #a43e2c;
+  --light-blue-grey: #eef1f4;
   --serif: "Fraunces", Georgia, serif;
   --sans: "Manrope", Arial, sans-serif;
   --pad: clamp(1rem, 4vw, 3rem);
@@ -27,28 +28,45 @@ a {
 }
 
 a:hover {
-  color: var(--accent);
+  color: var(--blue-grey);
 }
 
-.page-shell,
-.site-header {
+/* =========================
+   PAGE LAYOUT
+   ========================= */
+
+.page-shell {
   max-width: 76rem;
   margin: auto;
   padding-inline: var(--pad);
 }
 
+/* =========================
+   TOP TITLE / NAVIGATION BAR
+   ========================= */
+
 .site-header {
-  min-height: 3.75rem;
+  max-width: none;
+  min-height: 4.5rem;
+  padding-inline: var(--pad);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  border-bottom: 1px solid var(--line);
+
+  background: var(--blue-grey);
+  color: #ffffff;
+  border-bottom: none;
 }
 
 .site-name {
   font: 600 1rem var(--serif);
   text-decoration: none;
+  color: #ffffff;
+}
+
+.site-name:hover {
+  color: #ffffff;
 }
 
 nav {
@@ -58,11 +76,20 @@ nav {
 }
 
 nav a {
+  color: #ffffff;
   font-size: .72rem;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: .03em;
 }
+
+nav a:hover {
+  color: #dce3e9;
+}
+
+/* =========================
+   HERO
+   ========================= */
 
 .hero {
   display: grid;
@@ -81,7 +108,7 @@ nav a {
 
 .eyebrow {
   margin: 0 0 .4rem;
-  color: var(--accent);
+  color: var(--blue-grey);
   font-size: .68rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -108,6 +135,10 @@ h1 {
   font-size: 1rem;
 }
 
+/* =========================
+   SECTIONS
+   ========================= */
+
 section {
   padding: 1.4rem 0;
   border-bottom: 1px solid var(--line);
@@ -116,11 +147,13 @@ section {
 h2 {
   margin: 0 0 1rem;
   font-size: clamp(1.65rem, 3vw, 2.25rem);
+  color: var(--ink);
 }
 
 h3 {
   margin: 1.15rem 0 .35rem;
   font-size: 1.1rem;
+  color: var(--blue-grey);
 }
 
 ol,
@@ -144,7 +177,7 @@ dl {
 dt {
   font-size: .72rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--blue-grey);
 }
 
 dd {
@@ -188,7 +221,9 @@ dd {
   transform: scale(1.03);
 }
 
-/* Awards categories */
+/* =========================
+   AWARDS CONTENT
+   ========================= */
 
 .awards-content {
   max-width: 900px;
@@ -203,17 +238,24 @@ dd {
   margin: 0 0 .7rem;
   padding-bottom: .5rem;
   border-bottom: 1px solid var(--line);
+  color: var(--blue-grey);
 }
 
 .award-category ul {
   margin-top: .5rem;
 }
 
-/* Contact */
+/* =========================
+   CONTACT
+   ========================= */
 
 #contact p {
   margin: .5rem 0;
 }
+
+/* =========================
+   FOOTER
+   ========================= */
 
 footer {
   padding-top: 1rem !important;
@@ -227,6 +269,7 @@ footer {
    ========================= */
 
 @media (max-width: 600px) {
+
   .site-header {
     align-items: start;
     padding-block: .8rem;
@@ -255,6 +298,7 @@ footer {
   }
 
   /* Stack award images on small screens */
+
   .awards-gallery {
     flex-direction: column;
     max-width: 500px;
