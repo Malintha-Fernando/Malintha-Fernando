@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://malintha-fernando.github.io/Malintha-Fernando/sitemap.xml
